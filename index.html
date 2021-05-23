@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dark kitten repositories</title>
+    <style>
+        * {
+            cursor: url(paw.png), auto;
+        }
+        
+        body {
+            font-size: 200%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        
+        .flex-container div {
+            text-align: center;
+            padding: 1em;
+        }
+        
+        a:link {
+            color: black;
+            text-decoration: none
+        }
+        
+        a:visited {
+            color: grey;
+            text-decoration: none
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Welcome to my GitHub Repositories!</h3>
+    <p>Below is described my project, just click on link and watch</p>
+    <div class="flex-container">
+
+        <a href="https://dark-kitten.github.io/portfolio/">
+            <div>Home (this page)</div>
+        </a>
+        <a href="https://dark-kitten.github.io/paint-by-numbers/">
+            <div>Paint by numbers</div>
+        </a>
+        <a href="https://dark-kitten.github.io/COVID-data-visualizer/">
+            <div>COVID data visualizer</div>
+        </a>
+    </div>
+    <script>
+        let colors = [
+            '255, 99, 132',
+            '255, 159, 64',
+            '255, 205, 86',
+            '75, 192, 192',
+            '54, 162, 235',
+            '153, 102, 255',
+            '201, 203, 207'
+        ];
+
+        const items = document.querySelectorAll('.flex-container div');
+        items.forEach((item, index) => {
+            item.style.backgroundColor = `rgba(${colors[index]}, 0.2)`;
+            item.onmouseover = () => {
+                item.style.backgroundColor = `rgba(${colors[index]})`;
+            }
+            item.onmouseleave = () => {
+                item.style.backgroundColor = `rgba(${colors[index]}, 0.2)`;
+            }
+        });
+    </script>
+</body>
+
+</html>
